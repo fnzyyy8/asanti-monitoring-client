@@ -9,15 +9,13 @@ const isLoginRoute = computed(() => route.path === "/users/login");
 </script>
 
 <template>
-  <div v-if="isLoginRoute === false" class="d-flex p-4 vh-100">
-    <div class="d-flex grid gap-4 w-100">
-      <Sidebar/>
-      <div class="d-flex flex-column w-100">
-        <Navbar/>
-        <div class="mt-3 rounded-3 h-100 overflow-auto body-view">
-          <RouterView/>
-        </div>
-      </div>
+  <div v-if="isLoginRoute === false" class="d-flex p-2 h-100 ">
+    <Sidebar/>
+    <div class="container-fluid overflow-x-hidden ms-2 h-100 d-flex flex-column">
+      <Navbar/>
+      <main class="h-100 w-100 mt-2 bg-white rounded-3">
+        <RouterView/>
+      </main>
     </div>
   </div>
 
@@ -28,7 +26,10 @@ const isLoginRoute = computed(() => route.path === "/users/login");
 </template>
 
 <style scoped>
-.body-view{
+main {
+  overflow-y: auto;
+  overflow-x: auto;
+  display: flex;
   scrollbar-width: none;
 }
 

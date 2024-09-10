@@ -8,25 +8,23 @@ const gotoLogin = () => {
 };
 
 const routeName = useRoute();
-
 </script>
 
 <template>
-  <header class="">
-    <nav class="navbar-style bg-body-tertiary shadow-sm rounded-2 navbar px-3">
-      <div class="">
-        <h5 class="m-0">{{routeName.name}}</h5>
-      </div>
-      <button class="d-flex justify-content-center align-items-center bg-white p-2 rounded-3 border-0 shadow-sm"
-              @click="gotoLogin">
+  <header>
+    <nav class="navbar-expand-lg navbar bg-body-tertiary sticky-top rounded-3">
+      <div class="container-fluid">
         <div>
-          <h6 class="m-0">Farhan Septiansyah</h6>
-          <p class="lh-1 m-0">Document Control</p>
+          <h4>{{routeName.name}}</h4>
         </div>
-        <div class="d-flex ms-3">
-          <img src="@/assets/logout.svg" alt="logout" width="32">
+        <div class="d-flex bg-white p-2 rounded-3">
+          <div class="me-3">
+            <h6>Farhan</h6>
+            <p>Engineer</p>
+          </div>
+          <img src="@/assets/logout.svg" alt="logout" width="28">
         </div>
-      </button>
+      </div>
     </nav>
   </header>
 

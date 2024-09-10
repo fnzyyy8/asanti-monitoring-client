@@ -10,7 +10,7 @@ const formatedDate = `${date.getDate()}`
 <template>
   <div class="bg-body-tertiary sidebar-body rounded-4 shadow-sm">
     <div class="d-flex flex-column justify-content-between p-3 h-100">
-      <div class="d-flex flex-column justify-content-between">
+      <aside>
         <div class="d-flex flex-column">
           <a href="/public" class="navbar-brand d-flex justify-content-center">
             <img src="../../assets/Icon%20sena.png" alt="logo-sena" class="logo-sena">
@@ -46,7 +46,7 @@ const formatedDate = `${date.getDate()}`
             </li>
           </ul>
         </div>
-      </div>
+      </aside>
       <div class="text-center py-3">
         <div class="bg-white p-2 rounded-4 d-flex justify-content-center align-items-center shadow-sm">
           <h6 class="m-0">{{ formatedDate }}</h6>
@@ -58,7 +58,7 @@ const formatedDate = `${date.getDate()}`
 
 <style scoped>
 .sidebar-body {
-  min-width: 240px;
+  max-width: 240px;
 }
 
 .logo-sena {

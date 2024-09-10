@@ -5,7 +5,7 @@
 <template>
 
   <div class="container-fluid tbl-fixed p-0">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped table-hover table-responsive">
       <thead>
       <tr>
         <slot name="head"/>
