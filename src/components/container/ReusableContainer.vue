@@ -1,6 +1,6 @@
 <script setup>
 
-import {computed, onBeforeMount, onUnmounted} from "vue";
+import {computed} from "vue";
 
 const props = defineProps({
   name: {
@@ -9,7 +9,7 @@ const props = defineProps({
   },
   alignMiddle: {
     type: Boolean,
-    default: false
+    required: false
   },
   height: {
     type: Number,
@@ -38,21 +38,19 @@ const cardStyle = computed(() => {
 </script>
 
 <template>
-  <div class="container-fluid bg-body-tertiary rounded-3 p-3 d-flex flex-column justify-content-between"
-       :style="cardStyle">
-    <div v-if="props.name" class="d-flex">
-      <h5>{{ name }}</h5>
-    </div>
-    <div class="mt-3 overflow-hidden container-reuse d-flex" :class="alignMiddleClass">
+  <div :style=cardStyle class="shadow-lg bg-white rounded-3" :class="alignMiddleClass">
+    <div class="d-flex flex-column h-100 w-100 p-3">
+      <div v-if="props.name" class="mb-3">
+        <h5>{{ props.name }}</h5>
+      </div>
       <slot/>
     </div>
+
   </div>
 
 </template>
 
 <style scoped>
-.container-reuse{
-scrollbar-width: none;
-}
+
 
 </style>

@@ -4,24 +4,27 @@
 
 <template>
 
-  <div class="container-fluid tbl-fixed p-0">
-    <table class="table table-striped table-hover table-responsive">
-      <thead>
-      <tr>
-        <slot name="head"/>
-      </tr>
-      </thead>
-      <tbody>
-      <slot name="body"/>
-      </tbody>
-    </table>
+  <div class="tbl-fixed mw-100">
+    <div class="mh-100">
+        <table class="table table-responsive table-striped">
+        <thead>
+        <tr>
+          <slot name="head"/>
+        </tr>
+        </thead>
+        <tbody>
+        <slot name="body"/>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </template>
 
 <style scoped>
 .tbl-fixed {
-  overflow: auto;
+  overflow-x: auto;
+  overflow-y: auto;
   scrollbar-width: thin;
 }
 </style>

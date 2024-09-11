@@ -1,6 +1,6 @@
 <script setup>
 import ApexChart from 'apexcharts';
-import {computed, onMounted, ref} from "vue";
+import {onMounted, ref} from "vue";
 
 const props = defineProps({
   target: {
@@ -14,7 +14,7 @@ const props = defineProps({
   size: {
     type: Number,
     required: false,
-    default: 500
+    default: 400
   }
 });
 
@@ -30,12 +30,22 @@ onMounted(() => {
     series: [percentage],
     chart: {
       type: "radialBar",
-      offsetY: -20,
       width: props.size,
-      height: 'auto',
     },
+    responsive: [
+      {
+        breakpoints: 992,
+        options: {
+          width: props.size / 2,
+        }
+      }
+    ],
     plotOptions: {
       radialBar: {
+        hollow: {
+          margin: 0,
+          size: "50%"
+        },
         startAngle: -90,
         endAngle: 90,
         track: {
@@ -51,11 +61,7 @@ onMounted(() => {
           }
         }
       },
-    }, grid: {
-      padding: {
-        top: -10
-      }
-    },
+    }, grid: {},
     fill: {
       colors: ['#FFCC47'],
       type: 'solid',
@@ -75,12 +81,12 @@ onMounted(() => {
   chart.render();
 });
 
+console.log(refChart);
+
 </script>
 
 <template>
-  <div>
-    <div ref="refChart"></div>
-  </div>
+  <div ref="refChart" class="d-flex justify-content-center align-items-center"></div>
 </template>
 
 <style scoped>

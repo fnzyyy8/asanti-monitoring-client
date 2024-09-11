@@ -13,8 +13,10 @@ const isLoginRoute = computed(() => route.path === "/users/login");
     <Sidebar/>
     <div class="container-fluid overflow-x-hidden ms-2 h-100 d-flex flex-column">
       <Navbar/>
-      <main class="h-100 w-100 mt-2 bg-white rounded-3">
-        <RouterView/>
+      <main class= "h-100 w-100 mt-2 bg-white rounded-3">
+        <div class="p-3">
+          <RouterView/>
+        </div>
       </main>
     </div>
   </div>
@@ -29,7 +31,6 @@ const isLoginRoute = computed(() => route.path === "/users/login");
 main {
   overflow-y: auto;
   overflow-x: auto;
-  display: flex;
   scrollbar-width: none;
 }
 

@@ -53,7 +53,7 @@ onMounted(() => {
     },
     labels: ["Target", "Review", "Finish"],
     series: dataSet,
-    colors: ["#C26060", "#FFF173", "#77D66E"],
+  colors: ["#C26060", "#FFF173", "#77D66E"],
     legend: {
       position: "bottom"
     },

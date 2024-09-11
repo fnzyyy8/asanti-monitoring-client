@@ -29,8 +29,12 @@ onMounted(() => {
   const option = {
     chart: {
       type: "bar",
-      width: props.size * 2,
-      height: props.size
+      width: props.size,
+      height: 'auto',
+      zoom: {
+        enabled: true,
+        type: 'x'
+      }
     },
     plotOptions: {
       bar: {
